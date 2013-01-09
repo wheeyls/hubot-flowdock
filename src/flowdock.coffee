@@ -18,7 +18,7 @@ class Flowdock extends Adapter
       author =
         name: @userForId(message.user).name
         flow: message.flow
-      return if @name == author.name
+      return if @robot.name == author.name
       @receive new Robot.TextMessage(author, message.content)
 
   run: ->
